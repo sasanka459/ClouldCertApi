@@ -29,5 +29,12 @@ namespace qansapi.Controllers
             })
             .ToArray();
         }
+
+
+        [HttpGet(Name = "sayHello")]
+        public string GetHello()
+        {
+            return "Hello world api";
+        }
     }
 }
