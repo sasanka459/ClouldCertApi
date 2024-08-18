@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace qansapi.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]/[action]")]
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
@@ -19,7 +19,7 @@ namespace qansapi.Controllers
         }
 
         [HttpGet(Name = "GetWeatherForecast")]
-        public IEnumerable<WeatherForecast> Get()
+        public IEnumerable<WeatherForecast> GetWeatherForecast()
         {
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
@@ -31,7 +31,7 @@ namespace qansapi.Controllers
         }
 
 
-        [HttpGet(Name = "sayHello")]
+        [HttpGet(Name = "GetHello")]
         public string GetHello()
         {
             return "Hello world api";
