@@ -2,6 +2,11 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Identity.Web;
 using Microsoft.OpenApi.Models;
+using qans.BusinessAccessLayer.Abstraction;
+using qans.BusinessAccessLayer.Services;
+using qans.DataAccessLayer.Abstraction;
+using qans.DataAccessLayer.DataService;
+using qans.DataAccessLayer.Models;
 using qansapi.Controllers;
 using qansapi.Models;
 
@@ -13,9 +18,10 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddMi
 // Add services to the container.
 
 builder.Services.AddControllers();
-builder.Services.AddDbContext<SqldbQansDevCetralind001Context>(Option =>
+builder.Services.AddDbContext<QansDbContext>(Option =>
  Option.UseSqlServer(builder.Configuration.GetConnectionString("connectionsString")));
-
+builder.Services.AddTransient<IUserService,UserService>();
+builder.Services.AddTransient<IUserData, UserDataService>();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
