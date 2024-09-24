@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace qansapi.Models;
 
@@ -10,9 +11,9 @@ public partial class User
     public string Username { get; set; } = null!;
 
     public string PasswordHash { get; set; } = null!;
-
+    
     public string Email { get; set; } = null!;
-
+   
     public string MobileNo { get; set; } = null!;
 
     public DateTime? CreatedAt { get; set; }

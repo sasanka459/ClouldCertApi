@@ -4,27 +4,32 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 using Microsoft.Identity.Web.Resource;
 using qansapi.Models;
+using QnaBAL.BAL_Abstraction;
+using QnaBAL.Models;
 using System.Text.RegularExpressions;
+
 
 namespace qansapi.Controllers
 {
     [ApiController]
     [Route("api/[controller]/[action]")]
-    [Authorize()]
+  
     public class UserController : ControllerBase
     {
-        private readonly SqldbQansDevCetralind001Context _context;
-        public UserController(SqldbQansDevCetralind001Context dbContext)
+        private readonly IUserBAL _User;
+        public UserController(IUserBAL userBAL)
         {
-            _context = dbContext; 
+            _User = userBAL;
         }
+
 
         [HttpGet (Name="GetUser")]
-        public IEnumerable<User> GetUser()
+        public IEnumerable<UserModel> GetUser()
         {
-            return _context.Users.ToList();
+            var userget= _User.GetUser();
+            return userget;
         }
-
+/*
         [RequiredScope("AddNewUser")]
         [HttpPost(Name = "AddUser")]
         public String AddUser([FromBody]User user)
@@ -36,9 +41,9 @@ namespace qansapi.Controllers
             {
                 return "User exist";
             }
-            /*
+            *//*
              checking for valid phone number and EmailID
-            */
+            *//*
             if (!Validation.EmailValidation(user.Email))
             {
                 return "Invalid Email";
@@ -59,7 +64,7 @@ namespace qansapi.Controllers
                 return "User Added";
             }
               
-        }
+        }*/
             
             
 

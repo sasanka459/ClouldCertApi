@@ -4,6 +4,11 @@ using Microsoft.Identity.Web;
 using Microsoft.OpenApi.Models;
 using qansapi.Controllers;
 using qansapi.Models;
+using QnaBAL.BAL_Abstraction;
+using QnaBAL.Service;
+using QnaDAL.DAL_Abstraction;
+using QnaDAL.Entities;
+using QnaDAL.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,8 +18,11 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddMi
 // Add services to the container.
 
 builder.Services.AddControllers();
-builder.Services.AddDbContext<SqldbQansDevCetralind001Context>(Option =>
+builder.Services.AddScoped<IuserDAL, User_DAL>();
+builder.Services.AddScoped<IUserBAL,User_BAL>();
+builder.Services.AddDbContext<QnaContext>(Option =>
  Option.UseSqlServer(builder.Configuration.GetConnectionString("connectionsString")));
+
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

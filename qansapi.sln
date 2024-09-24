@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35208.52
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "qansapi", "qansapi.csproj", "{30FDE450-4DFD-423C-8ED2-6BFB4450D1CB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "qansapi", "qansapi.csproj", "{30FDE450-4DFD-423C-8ED2-6BFB4450D1CB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QnaDAL", "..\QnaDAL\QnaDAL.csproj", "{9AA6EC32-24CC-4DAC-A754-42A97E3A820F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QnaBAL", "..\QnaBAL\QnaBAL.csproj", "{AF55B951-6D84-4469-ACBA-5EAAD493DD69}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{30FDE450-4DFD-423C-8ED2-6BFB4450D1CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{30FDE450-4DFD-423C-8ED2-6BFB4450D1CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{30FDE450-4DFD-423C-8ED2-6BFB4450D1CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AA6EC32-24CC-4DAC-A754-42A97E3A820F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AA6EC32-24CC-4DAC-A754-42A97E3A820F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AA6EC32-24CC-4DAC-A754-42A97E3A820F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AA6EC32-24CC-4DAC-A754-42A97E3A820F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF55B951-6D84-4469-ACBA-5EAAD493DD69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF55B951-6D84-4469-ACBA-5EAAD493DD69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF55B951-6D84-4469-ACBA-5EAAD493DD69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF55B951-6D84-4469-ACBA-5EAAD493DD69}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
